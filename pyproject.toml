@@ -1,0 +1,25 @@
+[project]
+name = "agent-eagle-eye"
+version = "0.1.0"
+description = "Monitoring agent with thresholds and spike detection (FastAPI, offline)"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.115.6",
+  "uvicorn==0.34.0",
+  "pydantic==2.10.4",
+  "pydantic-settings==2.7.0",
+  "httpx==0.28.1",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = [
+  "integration: integration tests (offline, TestClient)",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
